@@ -7,7 +7,7 @@ Contents
 --------
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:caption: Contents:
 	
 	Language_Modelling/Run_LLMs
