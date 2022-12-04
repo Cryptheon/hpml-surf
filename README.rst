@@ -1,9 +1,8 @@
-Template for the Read the Docs tutorial
+HPML tutorials, blogposts and slides
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+This GitHub template includes tutorials and blogposts.
 
-Read the tutorial here:
+tutorial from here:
 
 https://docs.readthedocs.io/en/stable/tutorial/
