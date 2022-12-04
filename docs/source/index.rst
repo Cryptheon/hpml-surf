@@ -1,10 +1,9 @@
-Welcome to Lumache's documentation!
+Welcome to the high performance machine learning documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**SURF HPML**The high performance machine learning group at SURF facilitates efficient
+deep learning usage on the Dutch national supercomputer. Here we provide the documentation for our tutorials, presentations and blogposts!
+
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
