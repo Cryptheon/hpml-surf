@@ -1,8 +1,3 @@
-Welcome to the high performance machine learning documentation!
-===================================
-
-**SURF HPML** The high performance machine learning group at SURF facilitates efficient
-deep learning usage on the Dutch national supercomputer. Here we provide the documentation for our tutorials, presentations and blogposts!
 
 .. note::
 
@@ -11,4 +6,9 @@ deep learning usage on the Dutch national supercomputer. Here we provide the doc
 Contents
 --------
 
+..toctree::
+	:maxdepth: 1
+	:caption: Contents:
+	
+	Language_Modelling/Run_LLMs
 
