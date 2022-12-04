@@ -17,7 +17,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'HPML blog posts'
+project = 'HPML blogposts'
 copyright = '2022, SURF HPML'
 author = 'Bryan Cardenas Guevara'
 
@@ -71,8 +71,6 @@ intersphinx_mapping = {
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 intersphinx_disabled_domains = ['std']
-
-templates_path = ['_templates']
 
 # -- Options for HTML output
 
