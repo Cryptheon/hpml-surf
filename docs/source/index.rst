@@ -5,8 +5,8 @@ Welcome to the high performance machine learning documentation!
 deep learning usage on the Dutch national supercomputer. Here we provide the documentation for our tutorials, presentations and blogposts!
 
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+<> Check out the :doc:`usage` section for further information, including
+<> how to :ref:`installation` the project.
 
 .. note::
 
