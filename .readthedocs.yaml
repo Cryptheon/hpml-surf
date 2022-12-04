@@ -7,9 +7,9 @@ build:
     
 # Install our python package before building the docs
 python:
+  version: 3.8
   install:
-    - method: pip
-      path: .
+    - requirements: requirements.txt
 
 sphinx:
   fail_on_warning: true
