@@ -170,7 +170,7 @@ For now, we have briefly tested the following models with ``accelerate``.
 4. BLOOM
 
 The weights of these models live under ``/projects/0/hpmlprjs/GALACTICA/language_models/``.
-.. attention::
+.. Attention::
 
   As of now, deepspeed-inference is only compatible with galactica-6.7b.
 
