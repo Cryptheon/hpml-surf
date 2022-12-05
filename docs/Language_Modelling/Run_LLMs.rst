@@ -63,7 +63,7 @@ Loading the Tokenizer and Model
 
 Here we see how we prepare the tokenizer and load the model for the given model path. In this case we use ``/GALACTICA/langauge_models/galactica-6.7b``, in which we can find the model weights and the tokenizer. In kwargs we can see ``device_map="auto"`` and ``load_in_8bit=False``. 
 
-With the former we tell the accelerate framework to load the checkpoint automatically. The `accelerate <https://huggingface.co/docs/accelerate/index>`_ framework enables us to run a model in any distributed configuration, it supports sharded models and full checkpoints. The model gets loaded first by initializing a model with ``meta`` (read: empty) weights and then it determines how to load the sharded model across the available GPUs. It employs a simple pipeline parallelism method and while this is not the most efficient method, it's the most flexible for a large variety of models. See this `language modeling guide <https://huggingface.co/docs/accelerate/usage_guides/big_modeling>`_` 
+With the former we tell the accelerate framework to load the checkpoint automatically. The `accelerate <https://huggingface.co/docs/accelerate/index>`_ framework enables us to run a model in any distributed configuration, it supports sharded models and full checkpoints. The model gets loaded first by initializing a model with ``meta`` (read: empty) weights and then it determines how to load the sharded model across the available GPUs. It employs a simple pipeline parallelism method and while this is not the most efficient method, it's the most flexible for a large variety of models. See this `language modeling guide <https://huggingface.co/docs/accelerate/usage_guides/big_modeling>`_
 for a quick glance in how this works. For instance, with ``./GALACTICA/lm_gen.py`` we could load BLOOM 176b model with only one GPU! It might not be the most efficient execution, but hey, it works :).
 
 The latter argument ``load_in_8bit`` makes it possible to load in a model while using less memory. This approach 8-bit quantizes the model with super minimal performance loss. The main idea is to make large language models more accessible with a smaller infrastructure. For instance, this method allows us to load the full BLOOM 176b model on eight A100 40GB GPUs, as opposed to using 16 A100 GPUs. 
@@ -116,44 +116,48 @@ See the following links for more information about ``ZeRO stage-3``:
 To module load OptimizedLMs.
 
 Add the following line to your bashrc:
+  
+  ::
 
-Example::
-  export MODULEPATH="$MODULEPATH:/projects/0/hpmlprjs/scripts
-  source ~/.bashrc
+    export MODULEPATH="$MODULEPATH:/projects/0/hpmlprjs/scripts
+    source ~/.bashrc
 
 Now we can load the module you linked to in your .bashrc.
 
   ::
-  module load OptimizedLMs
+
+    module load OptimizedLMs
 
 And then run with 
 
   ::
-  lm_gen model_choice input output num_tokens temperature 
+
+    lm_gen model_choice input output num_tokens temperature 
 
 Anoter way is to load and install your own packages:
 
 The scripts ``./GALACTICA/lm_gen.py`` and ``./GALACTICA/lm_gen_ds.py`` can be run as is with the correct dependencies.
+  
+  ::
 
-::
-  module load 2021
-  module load Python/3.9.5-GCCcore-10.3.0
-  module load PyTorch/1.11.0-foss-2021a-CUDA-11.6.0
-  module load Miniconda3/4.9.2
+    module load 2021
+    module load Python/3.9.5-GCCcore-10.3.0
+    module load PyTorch/1.11.0-foss-2021a-CUDA-11.6.0
+    module load Miniconda3/4.9.2
 
-  pip install mpi4py, deepspeed, pydantic
-  pip install transformers==4.24, accelerate 
+    pip install mpi4py, deepspeed, pydantic
+    pip install transformers==4.24, accelerate 
 
 And then run:
+  
+  ::
 
-::
-  python lm_gen.py --model_path ./language_models/galactica-6.7b/ --batch_size 2 --num_tokens 1000 --input_file ./texts/inputs/geny.txt --temperature 0.95 --output_file ./texts/generations/out
+    python lm_gen.py --model_path ./language_models/galactica-6.7b/ --batch_size 2 --num_tokens 1000 --input_file ./texts/inputs/geny.txt --temperature 0.95 --output_file ./texts/generations/out
 
 Supported Models
 ----------------
 
 For now, we have briefly tested the following models with ``accelerate``.
-
 
 1. galactica-6.7b
 2. opt-30b
@@ -170,12 +174,14 @@ As of now, deepspeed is only compatible with galactica-6.7b.
 Let's run a few examples. 
 
 ::
+
   lm_gen galactica-6.7b alpha.txt out 75 0.95
 
 Where ``alpha.txt`` contains:
 
-::
-  "The function of proteins is mainly dictated by its three dimensional structure. Evolution has played its part in"
+  ::
+
+    "The function of proteins is mainly dictated by its three dimensional structure. Evolution has played its part in"
 
 Output:
 
