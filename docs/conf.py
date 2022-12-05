@@ -86,3 +86,5 @@ pygments_style = "sphinx"
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+nbsphinx_allow_errors = True
