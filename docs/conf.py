@@ -55,7 +55,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','Tutorials/PyTorch/*.ipynb']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -87,4 +87,5 @@ pygments_style = "sphinx"
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-nbsphinx_allow_errors = True
+#nbsphinx_allow_errors = True
+nbsphinx_execute = 'never'
