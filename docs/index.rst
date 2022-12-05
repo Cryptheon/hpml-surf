@@ -12,14 +12,14 @@ Contents:
 	:caption: Tutorials:
 
 	Tutorials/Language_Modelling/Run_LLMs
-	Tutorials/PyTorch/PyTorch_Profiling
+	Tutorials/PyTorch/PyTorch_profiling
 
 .. toctree::
 	:maxdepth: 1
 	:caption: Presentations:
 
 	Presentations/XAI/Histopathology_CLIP_XAI
-	
+
 .. toctree::
 	:maxdepth: 1
 	:caption: Blogposts:
