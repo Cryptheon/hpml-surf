@@ -76,19 +76,16 @@ li.toctree-l1 {color: black !important}
 
 
 
-
-
-
 /* .body {
     background-color:  #f3f4f7;
 } */
 
 .wy-body-for-nav {
-    background-color:  #f3f4f7;
+    background-color:  #dadada;
 }
 
 .wy-grid-for-nav {
-    background-color: #f3f4f7
+    background-color: #dadada;
 }
 
 

@@ -1,10 +1,7 @@
 
-.. note::
+.. warning::
 
-   This project is under active development.
-
-Contents
---------
+   This project is under verocious active development.
 
 .. toctree::
 	:maxdepth: 1

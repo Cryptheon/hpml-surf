@@ -54,7 +54,7 @@ Loading the Tokenizer and Model
 -------------------------------
 
 .. code-block:: python
-  
+
   tokenizer = AutoTokenizer.from_pretrained(args.model_path)
 
   kwargs = dict(device_map="auto", load_in_8bit=False)
@@ -92,7 +92,7 @@ DeepSpeed
 The script  ``./GALACTICA/lm_gen_ds.py`` contains code to run model inference with deepspeed. The biggest difference with ``./GALACTICA/lm_gen.py`` is the way deepspeed has to be initialized. Luckily, for our purposes for now this can remain minimal:
 
 .. code-block:: python
-
+  
   model = deepspeed.init_inference(
           model=model,      # Transformers models
           dtype=torch.float16, # dtype of the weights (fp16)
