@@ -1,6 +1,6 @@
-SURF's HPML
+SURF HPML
 =======================================
-Welcome to SURF's high performance machine learning documentation! 
+Welcome to SURF HPML documentation! 
 ------------------------------------------------------------------
 
 The high performance machine learning group at SURF facilitates efficient deep learning usage on the Dutch national supercomputer. Here we provide the documentation for our tutorials, presentations and blogposts! 
