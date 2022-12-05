@@ -48,14 +48,15 @@ We can use
 
 or we can just use ``git clone`` in this case. 
 
-Note that using git lfs for larger language models such as BLOOM-176b we would first be downloading specific binaries that would need to be constructed afterwards by running ``git lfs checkout``.
+.. note::
+  Using git lfs for larger language models such as BLOOM-176b, we would first be downloading specific binaries that would need to be constructed afterwards by running ``git lfs checkout``.
 
 Let's look at how to load this model using Hugginface. We use ``transformers==4.21`` and ``accelerate``, which is Hugginface's own distributed computing framework that will make our lives easier for now.
 
-To avoid bloat and confusion we show the important parts only, please take a look at ``./GALACTICA/lm_gen.py`` for more details.
-
 Loading the Tokenizer and Model
 -------------------------------
+
+To avoid bloat and confusion we show the important parts only, please take a look at ``./GALACTICA/lm_gen.py`` for more details.
 
 .. code-block:: python
 
@@ -88,9 +89,7 @@ As we tokenize our input and load our model we can easily generate a piece of te
 
 I trust that most of these arguments are familiar to us. The ``input tokens`` is a dictionary containing the tokenized input text (``input_ids``), an optional ``attention mask`` and ``token_type_ids``. For the record, ``token_type_ids`` is not accepted by galactica-type models. Most of the time we are only interested in the ``input_ids``, but some models require the other tensors as input as well.
 
-Naturally, there are still some model-specific things that have to be accounted for.
-
-DeepSpeed
+DeepSpeed-Inference
 ---------
 
 The script  ``./GALACTICA/lm_gen_ds.py`` contains code to run model inference with deepspeed. The biggest difference with ``./GALACTICA/lm_gen.py`` is the way deepspeed has to be initialized. Luckily, for our purposes for now this can remain minimal:
@@ -120,9 +119,7 @@ See the following links for more information about ``ZeRO stage-3``:
 2. How to run as a module on Snellius
 -------------------------------------
 
-To module load OptimizedLMs.
-
-Add the following line to your bashrc:
+To module load OptimizedLMs add the following line to your bashrc:
   
   ::
 
@@ -171,9 +168,10 @@ For now, we have briefly tested the following models with ``accelerate``.
 3. gpt-neox-20b
 4. BLOOM
 
-The weights of these models live in ``/projects/0/hpmlprjs/GALACTICA/language_models/``.
+The weights of these models live under ``/projects/0/hpmlprjs/GALACTICA/language_models/``.
+.. attention::
 
-As of now, deepspeed is only compatible with galactica-6.7b.
+  As of now, deepspeed-inference is only compatible with galactica-6.7b.
 
 3. Examples
 -----------
