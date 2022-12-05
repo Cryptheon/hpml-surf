@@ -12,7 +12,7 @@ Contents:
 	:caption: Tutorials:
 
 	Tutorials/Language_Modelling/Run_LLMs
-	Tutorials/PyTorch/PyTorch_profiling
+	Tutorials/PyTorch
 
 .. toctree::
 	:maxdepth: 1
