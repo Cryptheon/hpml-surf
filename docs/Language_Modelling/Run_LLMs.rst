@@ -15,7 +15,7 @@ We will mainly discuss:
 The main [repository](https://github.com/sara-nl/Galactica_Snellius) and the tested downloaded models can be found on Snellius under ``/projects/0/hpmlprjs/GALACTICA/``.
 For now, we named it GALACTICA as it was solely intended for the new Meta's [Galactica](https://galactica.org/) models. Although, we could use any causal language model uploaded to the Huggingface [hub](https://huggingface.co/models?sort=downloads&search=language+model). More specifically, any model that can be loaded using ``AutoTokenizer`` and ``AutoModelForCausalLM``. Do note that testing is still necessary as some models break under specific ``PyTorch``, ``transformers`` or ``DeepSpeed`` versions. 
 
-.. note::
+.. warning::
   This blog is mainly intended for the HPML members for now.
 
 For now we have tested four different language models:
