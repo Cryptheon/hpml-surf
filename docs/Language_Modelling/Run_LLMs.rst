@@ -71,9 +71,9 @@ Generation
 As we tokenize our input and load our model we can easily generate a piece of text given our input by using Huggingface's generate function which is implemented for CausalLMs:
 
 :: 
-        generate_kwargs = dict(max_new_tokens=args.num_tokens, do_sample=True, temperature=args.temperature)
+  generate_kwargs = dict(max_new_tokens=args.num_tokens, do_sample=True, temperature=args.temperature)
 
-        outputs = model.generate(**input_tokens, **generate_kwargs)
+  outputs = model.generate(**input_tokens, **generate_kwargs)
 
 I trust that most of these arguments are familiar to us. The ``input tokens`` is a dictionary containing the tokenized input text (``input_ids``), an optional ``attention mask`` and ``token_type_ids``. For the record, ``token_type_ids`` is not accepted by galactica-type models. Most of the time we are only interested in the ``input_ids``, but some models require the other tensors as input as well.
 
@@ -85,12 +85,12 @@ DeepSpeed
 The script  ``./GALACTICA/lm_gen_ds.py`` contains code to run model inference with deepspeed. The biggest difference with ``./GALACTICA/lm_gen.py`` is the way deepspeed has to be initialized. Luckily, for our purposes for now this can remain minimal:
 
 ::
-        model = deepspeed.init_inference(
-                model=model,      # Transformers models
-                dtype=torch.float16, # dtype of the weights (fp16)
-                replace_method=None, # Lets DS autmatically identify the layer to replace
-                replace_with_kernel_inject=False, # replace the model with the kernel injector
-            )
+  model = deepspeed.init_inference(
+          model=model,      # Transformers models
+          dtype=torch.float16, # dtype of the weights (fp16)
+          replace_method=None, # Lets DS autmatically identify the layer to replace
+          replace_with_kernel_inject=False, # replace the model with the kernel injector
+      )
 
 Deepspeed deploys Tensor parallelism that mainly distributes each layer ''horizontally''; it splits up the layer and distributes it across the GPUs, each shard then lives on its appointed gpu. Additionally, it gives us the capability to replace some modules with specialized CUDA kernels to run these layers faster. I've run this but we are not getting the correct output. This should be fixable though.
 
@@ -113,36 +113,36 @@ To module load OptimizedLMs (Thank you Duncan!).
 Add the following line to your bashrc:
 
 ::
-        export MODULEPATH="$MODULEPATH:/projects/0/hpmlprjs/scripts
-        source ~/.bashrc
+  export MODULEPATH="$MODULEPATH:/projects/0/hpmlprjs/scripts
+  source ~/.bashrc
 
 Now we can load the module you linked to in your .bashrc.
 
 ::
-        module load OptimizedLMs
+  module load OptimizedLMs
 
 And then run with 
 
 ::
-        lm_gen model_choice input output num_tokens temperature 
+  lm_gen model_choice input output num_tokens temperature 
 
 Anoter way is to load and install your own packages:
 
 The scripts ``./GALACTICA/lm_gen.py`` and ``./GALACTICA/lm_gen_ds.py`` can be run as is with the correct dependencies.
 
 ::
-        module load 2021
-        module load Python/3.9.5-GCCcore-10.3.0
-        module load PyTorch/1.11.0-foss-2021a-CUDA-11.6.0
-        module load Miniconda3/4.9.2
+  module load 2021
+  module load Python/3.9.5-GCCcore-10.3.0
+  module load PyTorch/1.11.0-foss-2021a-CUDA-11.6.0
+  module load Miniconda3/4.9.2
 
-        pip install mpi4py, deepspeed, pydantic
-        pip install transformers==4.24, accelerate 
+  pip install mpi4py, deepspeed, pydantic
+  pip install transformers==4.24, accelerate 
 
 And then run:
 
 ::
-        python lm_gen.py --model_path ./language_models/galactica-6.7b/ --batch_size 2 --num_tokens 1000 --input_file ./texts/inputs/geny.txt --temperature 0.95 --output_file ./texts/generations/out
+  python lm_gen.py --model_path ./language_models/galactica-6.7b/ --batch_size 2 --num_tokens 1000 --input_file ./texts/inputs/geny.txt --temperature 0.95 --output_file ./texts/generations/out
 
 Supported Models
 ----------------
@@ -165,12 +165,12 @@ As of now, deepspeed is only compatible with galactica-6.7b.
 Let's run a few examples. 
 
 ::
-        lm_gen galactica-6.7b alpha.txt out 75 0.95
+  lm_gen galactica-6.7b alpha.txt out 75 0.95
 
 Where ``alpha.txt`` contains:
 
 ::
-        "The function of proteins is mainly dictated by its three dimensional structure. Evolution has played its part in"
+  "The function of proteins is mainly dictated by its three dimensional structure. Evolution has played its part in"
 
 Output:
 
