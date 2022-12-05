@@ -1,4 +1,7 @@
-# Large Language Models on Snellius 
+
+===========================
+Large Language Models on Snellius 
+===========================
 
 In this post we demonstrate how to run a large language model on Snellius. The main purpose of this small experiment was explorative in nature; to which extent can we perform
 generation or latent extraction from these models and how much compute is needed for a single prompt?
