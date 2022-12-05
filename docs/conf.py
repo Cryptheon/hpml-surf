@@ -46,7 +46,8 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'nbsphinx',
 	'sphinx.ext.mathjax',
-	'sphinx_rtd_theme'
+	'sphinx_rtd_theme',
+    'sphinx_gallery.load_style'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
