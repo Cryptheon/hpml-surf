@@ -1,8 +1,8 @@
 .. include:: ../README.rst
 
-| `SURF Website <https://www.surf.nl/en/high-performance-machine-learning-efficient-and-scalable-machine-learning-in-hpc-environments>'_
-| `Repository <https://github.com/Cryptheon/hpml-surf>`_
-| `Author <Bryan Cardenas Guevara>`_
+| *SURF Website*: https://www.surf.nl/
+| *Repository*: https://github.com/Cryptheon/hpml-surf
+| *Author*: Bryan Cardenas Guevara
 
 .. toctree::
 	:maxdepth: 1
