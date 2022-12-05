@@ -37,7 +37,7 @@ Let's take [galactica](https://huggingface.co/facebook/galactica-6.7b) uploaded 
 We can use
 
 ::
-        git lfs clone https://huggingface.co/facebook/galactica-6.7b/
+  git lfs clone https://huggingface.co/facebook/galactica-6.7b/
 
 or we can just use ``git clone`` in this case. 
 
@@ -51,11 +51,11 @@ Loading the Tokenizer and Model
 -------------------------------
 
 ::
-        tokenizer = AutoTokenizer.from_pretrained(args.model_path)
+  tokenizer = AutoTokenizer.from_pretrained(args.model_path)
 
-        kwargs = dict(device_map="auto", load_in_8bit=False)
+  kwargs = dict(device_map="auto", load_in_8bit=False)
 
-        model = AutoModelForCausalLM.from_pretrained(args.model_path, **kwargs)
+  model = AutoModelForCausalLM.from_pretrained(args.model_path, **kwargs)
 
 
 Here we see how we prepare the tokenizer and load the model for the given model path. In this case we use ``/GALACTICA/langauge_models/galactica-6.7b``, in which we can find the model weights and the tokenizer. In kwargs we can see ``device_map="auto"`` and ``load_in_8bit=False``. 
