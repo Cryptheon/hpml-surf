@@ -5,7 +5,7 @@ sphinx:
     
 # Install our python package before building the docs
 python:
-  version: 3.8
+  version: 3.7
   install:
     - requirements: docs/requirements.txt
 
