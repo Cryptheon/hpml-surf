@@ -54,6 +54,7 @@ Loading the Tokenizer and Model
 -------------------------------
 
 .. code-block:: python
+  
   tokenizer = AutoTokenizer.from_pretrained(args.model_path)
 
   kwargs = dict(device_map="auto", load_in_8bit=False)
@@ -76,6 +77,7 @@ Generation
 As we tokenize our input and load our model we can easily generate a piece of text given our input by using Huggingface's generate function which is implemented for CausalLMs:
 
 .. code-block:: python
+
   generate_kwargs = dict(max_new_tokens=args.num_tokens, do_sample=True, temperature=args.temperature)
 
   outputs = model.generate(**input_tokens, **generate_kwargs)
@@ -90,6 +92,7 @@ DeepSpeed
 The script  ``./GALACTICA/lm_gen_ds.py`` contains code to run model inference with deepspeed. The biggest difference with ``./GALACTICA/lm_gen.py`` is the way deepspeed has to be initialized. Luckily, for our purposes for now this can remain minimal:
 
 .. code-block:: python
+
   model = deepspeed.init_inference(
           model=model,      # Transformers models
           dtype=torch.float16, # dtype of the weights (fp16)
