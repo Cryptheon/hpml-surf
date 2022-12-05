@@ -8,19 +8,21 @@ Contents:
 ---------
 
 .. toctree::
-	:maxdepth: 2
+	:maxdepth: 1
 	:caption: Tutorials:
 
 	Tutorials/Language_Modelling/Run_LLMs
 	Tutorials/PyTorch/PyTorch_Profiling
 
 .. toctree::
-	:maxdepth: 2
-	:caption: Blogposts:
-
-.. toctree::
-	:maxdepth: 2
+	:maxdepth: 1
 	:caption: Presentations:
 
-	Presentations/XAI
+	Presentations/XAI/Histopathology_CLIP_XAI
+	
+.. toctree::
+	:maxdepth: 1
+	:caption: Blogposts:
+
+
 
