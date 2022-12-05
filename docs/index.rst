@@ -8,10 +8,10 @@ Contents:
 ---------
 
 .. toctree::
-	:maxdepth: 1
+	:maxdepth: 2
 	:caption: Tutorials:
 
-	Tutorials/PyTorch/pyTorch_profiling
+	Tutorials/PyTorch/PyTorch_profiling.ipynb
 	Tutorials/Language_Modelling/Run_LLMs
 	
 
