@@ -38,7 +38,7 @@ Let's take `galactica <https://huggingface.co/facebook/galactica-6.7b>`_ uploade
 
 We can use
 
-Example::
+  ::
 
     git lfs clone https://huggingface.co/facebook/galactica-6.7b/
 
@@ -53,7 +53,7 @@ To avoid bloat and confusion we show the important parts only, please take a loo
 Loading the Tokenizer and Model
 -------------------------------
 
-code-block:: python
+.. code-block:: python
   tokenizer = AutoTokenizer.from_pretrained(args.model_path)
 
   kwargs = dict(device_map="auto", load_in_8bit=False)
@@ -117,7 +117,7 @@ To module load OptimizedLMs.
 
 Add the following line to your bashrc:
 
-.. Example::
+Example::
   export MODULEPATH="$MODULEPATH:/projects/0/hpmlprjs/scripts
   source ~/.bashrc
 
