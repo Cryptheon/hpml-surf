@@ -54,7 +54,8 @@ or we can just use ``git clone`` in this case.
 Let's look at how to load this model using Hugginface. We use ``transformers==4.21`` and ``accelerate``, which is Hugginface's own distributed computing framework that will make our lives easier for now.
 
 Loading the Tokenizer and Model
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 To avoid bloat and confusion we show the important parts only, please take a look at ``./GALACTICA/lm_gen.py`` for more details.
 
@@ -77,7 +78,7 @@ However, as nothing is free in life, this comes at the cost of inference time. W
 
 
 Generation
-----------
+~~~~~~~~~~
 
 As we tokenize our input and load our model we can easily generate a piece of text given our input by using Huggingface's generate function which is implemented for CausalLMs:
 
@@ -90,7 +91,7 @@ As we tokenize our input and load our model we can easily generate a piece of te
 I trust that most of these arguments are familiar to us. The ``input tokens`` is a dictionary containing the tokenized input text (``input_ids``), an optional ``attention mask`` and ``token_type_ids``. For the record, ``token_type_ids`` is not accepted by galactica-type models. Most of the time we are only interested in the ``input_ids``, but some models require the other tensors as input as well.
 
 DeepSpeed-Inference
----------
+~~~~~~~~~~~~~~~~~~~
 
 The script  ``./GALACTICA/lm_gen_ds.py`` contains code to run model inference with deepspeed. The biggest difference with ``./GALACTICA/lm_gen.py`` is the way deepspeed has to be initialized. Luckily, for our purposes for now this can remain minimal:
 
@@ -159,7 +160,7 @@ And then run:
     python lm_gen.py --model_path ./language_models/galactica-6.7b/ --batch_size 2 --num_tokens 1000 --input_file ./texts/inputs/geny.txt --temperature 0.95 --output_file ./texts/generations/out
 
 Supported Models
-----------------
+~~~~~~~~~~~~~~~~
 
 For now, we have briefly tested the following models with ``accelerate``.
 
