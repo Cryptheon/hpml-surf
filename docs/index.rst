@@ -4,11 +4,20 @@
 | *Repository*: https://github.com/Cryptheon/hpml-surf
 | *Author*: Bryan Cardenas Guevara
 
-.. toctree::
-	:maxdepth: 1
-	:caption: Contents:
+Contents:
+---------
 
-	Tutorials
-	Blogposts
-	Presentations
+.. toctree::
+	:maxdepth: 2
+	:caption: Tutorials:
+
+	Tutorials/Language_Modelling
+
+.. toctree::
+	:maxdepth: 2
+	:caption: Blogposts:
+
+.. toctree::
+	:maxdepth: 2
+	:caption: Presentations:
 
