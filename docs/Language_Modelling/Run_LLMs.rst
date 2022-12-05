@@ -123,19 +123,19 @@ Example::
 
 Now we can load the module you linked to in your .bashrc.
 
-.. Example::
+  ::
   module load OptimizedLMs
 
 And then run with 
 
-.. Example::
+  ::
   lm_gen model_choice input output num_tokens temperature 
 
 Anoter way is to load and install your own packages:
 
 The scripts ``./GALACTICA/lm_gen.py`` and ``./GALACTICA/lm_gen_ds.py`` can be run as is with the correct dependencies.
 
-.. Example::
+::
   module load 2021
   module load Python/3.9.5-GCCcore-10.3.0
   module load PyTorch/1.11.0-foss-2021a-CUDA-11.6.0
@@ -146,7 +146,7 @@ The scripts ``./GALACTICA/lm_gen.py`` and ``./GALACTICA/lm_gen_ds.py`` can be ru
 
 And then run:
 
-.. Example::
+::
   python lm_gen.py --model_path ./language_models/galactica-6.7b/ --batch_size 2 --num_tokens 1000 --input_file ./texts/inputs/geny.txt --temperature 0.95 --output_file ./texts/generations/out
 
 Supported Models
@@ -169,12 +169,12 @@ As of now, deepspeed is only compatible with galactica-6.7b.
 
 Let's run a few examples. 
 
-.. Example::
+::
   lm_gen galactica-6.7b alpha.txt out 75 0.95
 
 Where ``alpha.txt`` contains:
 
-.. Example::
+::
   "The function of proteins is mainly dictated by its three dimensional structure. Evolution has played its part in"
 
 Output:
