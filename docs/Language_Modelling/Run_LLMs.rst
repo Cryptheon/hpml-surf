@@ -36,7 +36,7 @@ Let's take [galactica](https://huggingface.co/facebook/galactica-6.7b) uploaded 
 
 We can use
 
-::
+.. example::
 
     git lfs clone https://huggingface.co/facebook/galactica-6.7b/
 
