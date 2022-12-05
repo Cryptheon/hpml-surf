@@ -11,8 +11,9 @@ Contents:
 	:maxdepth: 1
 	:caption: Tutorials:
 
+	Tutorials/PyTorch/pyTorch_profiling
 	Tutorials/Language_Modelling/Run_LLMs
-	Tutorials/PyTorch
+	
 
 .. toctree::
 	:maxdepth: 1
