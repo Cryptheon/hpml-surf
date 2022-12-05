@@ -1,12 +1,12 @@
-Welcome to SURF's high performance machine learning documentation! HPML tutorials, blogposts and slides at your service.
+SURF's HPML
 =======================================
+Welcome to SURF's high performance machine learning documentation! 
+------------------------------------------------------------------
+
 The high performance machine learning group at SURF facilitates efficient deep learning usage on the Dutch national supercomputer. Here we provide the documentation for our tutorials, presentations and blogposts! 
 
-.. note:: 
-    This project is under active development. 
+.. warning:: 
+    This project is currently under verocious development. 
 
-This GitHub template includes tutorials and blogposts.
+This GitHub template includes tutorials, blogposts and slides.
 
-tutorial from here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
