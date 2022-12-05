@@ -65,7 +65,7 @@ background: white;}
 
 
 /* left contents bar*/
-.wy-nav-side {background: #636363;
+.wy-nav-side {background: #f3f4f7;
 color: black !important;}
 
 /* .reference internal {color: black} */
@@ -76,16 +76,17 @@ li.toctree-l1 {color: black !important}
 
 
 
+
 /* .body {
     background-color:  #f3f4f7;
 } */
 
 .wy-body-for-nav {
-    background-color:  #dadada;
+    background-color:  #f3f4f7;
 }
 
 .wy-grid-for-nav {
-    background-color: #dadada;
+    background-color: #f3f4f7
 }
 
 

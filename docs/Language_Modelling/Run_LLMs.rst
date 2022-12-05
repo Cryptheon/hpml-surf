@@ -4,7 +4,7 @@ Large Language Models on Snellius
 ===========================
 
 In this post we demonstrate how to run a large language model on Snellius. The main purpose of this small experiment was explorative in nature; to which extent can we perform
-generation or latent extraction from these models and how much compute is needed for a single prompt?
+generation or latent extraction on Snellius? How much compute is needed for a single prompt?
 
 We will mainly discuss: 
 
@@ -13,11 +13,15 @@ We will mainly discuss:
 3. a few examples.
 
 The main `repository <https://github.com/sara-nl/Galactica_Snellius>`_ and the tested downloaded models can be found on Snellius under ``/projects/0/hpmlprjs/GALACTICA/``.
-For now, we named it GALACTICA as it was solely intended for the new Meta's `Galactica <https://galactica.org/>`_ models. Although, we could use any causal language model uploaded to the Huggingface `Huggingface hub <https://huggingface.co/models?sort=downloads&search=language+model>`_. 
-More specifically, any model that can be loaded using ``AutoTokenizer`` and ``AutoModelForCausalLM``. Do note testing is still necessary as some models break under specific ``PyTorch``, ``transformers`` or ``DeepSpeed`` versions. 
+For now, we named it GALACTICA as it was solely intended for the new Meta's `Galactica <https://galactica.org/>`_ scientific models. Although, we could use any causal language model uploaded to the Huggingface `Huggingface hub <https://huggingface.co/models?sort=downloads&search=language+model>`_. 
+More specifically, any model that can be loaded using ``AutoTokenizer`` and ``AutoModelForCausalLM``. Do note 
+
+.. note::
+  
+  Testing is still necessary as some models break under specific ``PyTorch``, ``transformers`` or ``DeepSpeed`` versions. 
 
 .. warning::
-  This blog is mainly intended for the HPML members for now. A more public version is coming soon GPUs near you.
+  This blog is mainly intended for the HPML members for now. A more public version is coming soon, GPUs near you.
 
 For now we have tested four different language models:
 
@@ -92,7 +96,7 @@ DeepSpeed
 The script  ``./GALACTICA/lm_gen_ds.py`` contains code to run model inference with deepspeed. The biggest difference with ``./GALACTICA/lm_gen.py`` is the way deepspeed has to be initialized. Luckily, for our purposes for now this can remain minimal:
 
 .. code-block:: python
-  
+
   model = deepspeed.init_inference(
           model=model,      # Transformers models
           dtype=torch.float16, # dtype of the weights (fp16)
