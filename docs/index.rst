@@ -11,7 +11,8 @@ Contents:
 	:maxdepth: 2
 	:caption: Tutorials:
 
-	Tutorials/Language_Modelling
+	Tutorials/Language_Modelling/Run_LLMs
+	Tutorials/PyTorch/PyTorch_Profiling
 
 .. toctree::
 	:maxdepth: 2
@@ -20,4 +21,6 @@ Contents:
 .. toctree::
 	:maxdepth: 2
 	:caption: Presentations:
+
+	Presentations/XAI
 
