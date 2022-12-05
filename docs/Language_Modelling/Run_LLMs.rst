@@ -37,7 +37,8 @@ Let's take [galactica](https://huggingface.co/facebook/galactica-6.7b) uploaded 
 We can use
 
 ::
-  git lfs clone https://huggingface.co/facebook/galactica-6.7b/
+
+    git lfs clone https://huggingface.co/facebook/galactica-6.7b/
 
 or we can just use ``git clone`` in this case. 
 
