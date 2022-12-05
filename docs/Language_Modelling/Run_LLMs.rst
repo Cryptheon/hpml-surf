@@ -53,7 +53,7 @@ To avoid bloat and confusion we show the important parts only, please take a loo
 Loading the Tokenizer and Model
 -------------------------------
 
-.. code-block:: python
+code-block:: python
   tokenizer = AutoTokenizer.from_pretrained(args.model_path)
 
   kwargs = dict(device_map="auto", load_in_8bit=False)
