@@ -47,7 +47,8 @@ extensions = [
     'nbsphinx',
 	'sphinx.ext.mathjax',
 	'sphinx_rtd_theme',
-    'sphinx_gallery.load_style'
+    'sphinx_gallery.load_style',
+     'IPython.sphinxext.ipython_console_highlighting'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

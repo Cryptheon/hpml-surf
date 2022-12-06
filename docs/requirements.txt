@@ -2,8 +2,8 @@ Sphinx==4.0.2
 sphinx-rtd-theme==0.5.2
 readthedocs-sphinx-ext
 nbsphinx==0.8.6
-ipython
-IPython
+ipython3
+IPython3
 ipykernel
 Pygments==2.9.0
 sphinxcontrib-bibtex>=2.1
